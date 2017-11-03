@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (17.11.03-3) experimental; urgency=medium
+
+  * Fixed package structure
+  * Added missing bind config
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 03 Nov 2017 04:39:00 +0100
+
 stsbl-iserv-server-tayga (17.11.03-2) experimental; urgency=medium
 
   * Initial release
