@@ -1,5 +1,5 @@
-stsbl-iserv-server-tayga (17.11.03-1) unstable; urgency=medium
+stsbl-iserv-server-tayga (17.11.03-2) experimental; urgency=medium
 
-  * Initial Release.
+  * Initial release
 
- -- Stadtteilschule Blankenese <repository@stsbl.de>  Fri, 03 Nov 2017 04:16:02 +0100
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 03 Nov 2017 04:24:19 +0100
