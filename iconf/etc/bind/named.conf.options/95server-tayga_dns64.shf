@@ -1,0 +1,16 @@
+#!/bin/bash
+
+. /usr/lib/iserv/cfg
+
+if [ ! -z "$NAT64Range" ]
+then
+  Script="/options {/a \\"
+  Script+="        dns64 $NAT64Range {\\\n"
+  Script+="                 clients { any; };\\\n"
+  Script+="                 mapped { !dns64-ignore; any; };\\\n"
+  Script+="        };\\\n"
+
+  sed "$(echo -e "$Script")"
+else
+  cat
+fi

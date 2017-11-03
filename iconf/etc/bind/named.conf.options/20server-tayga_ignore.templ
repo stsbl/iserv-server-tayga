@@ -1,0 +1,33 @@
+acl "dns64-ignore" { // do not apply DNS64 to this addresses
+        # Black list lan addresses
+$(for l in ${LAN[@]}
+do
+  [[ "$l" =~ ":" ]] && continue
+  echo "        $l;"
+done
+)
+        # Blacklist IServ backend server
+        138.201.179.166; # antares.iserv.eu
+        138.201.179.165; # cert.iserv.eu
+        136.243.213.104; # push.iserv.eu
+        138.201.179.163; # support.iserv.eu
+        136.243.213.99; # www.iserv.eu
+        # Blacklist IServ remote support server
+        138.201.179.164; # auth.iserv.eu
+        217.91.34.93; # dsl1.iserv.eu
+        217.91.87.26; # dsl2.iserv.eu
+	# Blacklist IServ nameserver
+	138.201.179.160; # ns1.iserv.eu
+        136.243.213.96; # ns2.iserv.eu
+        78.46.237.128; # ns3.iserv.eu
+        # Blacklist IServ mail relays
+        138.201.179.161; # relay1.iserv.eu
+        136.243.213.97; # relay2.iserv.eu
+        78.46.237.129; # relay3.iserv.eu
+        136.243.213.102; # relaybs.iserv.eu
+	# Blacklist IServ update server
+        138.201.179.162; # update1.iserv.eu
+        136.243.213.98; # update2.iserv.eu
+        78.46.237.130; # update3.iserv.eu
+};
+
