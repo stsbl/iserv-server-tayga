@@ -1,0 +1,6 @@
+debian/stsbl-iserv-server-tayga/*
+debian/stsbl-iserv-server-tayga.substvars
+debian/stsbl-iserv-server-tayga.debhelper.log
+debian/files
+debian/debhelper-build-stamp
+debian/*.debhelper

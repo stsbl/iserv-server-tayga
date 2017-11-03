@@ -1,0 +1,30 @@
+NAT64Range:
+name            IPv6 range for NAT64
+description     IPv6 range which is used to map IPv4 addresses in DNS. Must at least have a prefix length of 96 bit. Normally there is no need to change that value.
+type            string
+default         64:ff9b::/96
+readonly        true
+group           Module: Tayga server
+
+NAT64IPv4Range:
+name            IPv4 alias range for NAT64
+description     Every IPv6 host which should access IPv4 hosts must have an internal IPv4 address. A random one will chosen from this range. This range must be different from other IPv4 ranges in LAN.
+type            string
+default         10.1.0.0/16
+readonly        true
+group           Module: Tayga server
+
+NAT64IPv6TunnelAddress:
+name            IPv6 tunnel address
+description     The NAT64 tunnel requires a global IPv6 address to create outgoing packets. This address should have a 128 bit prefix.
+type            string
+readonly        true
+group           Module: Tayga server
+
+NAT64IPv6LocalAddress:
+name            IPv6 local address
+description     The NAT64 tunnel requires a second global IPv6 address to create outgoing packets which have the origin on own host. This address should have a 128 bit prefix.
+type            string
+readonly        true
+group           Module: Tayga server
+

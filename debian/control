@@ -1,0 +1,15 @@
+Source: stsbl-iserv-server-tayga
+Section: unknown
+Priority: optional
+Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: https://anonscm.debian.org/collab-maint/stsbl-iserv-server-tayga.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/stsbl-iserv-server-tayga.git
+
+Package: stsbl-iserv-server-tayga
+Architecture: all
+Depends: ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

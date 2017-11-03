@@ -1,0 +1,12 @@
+--- /etc/init.d/tayga	2013-03-03 11:53:36.000000000 +0100
++++ tayga	2017-11-03 03:20:27.585713110 +0100
+@@ -110,7 +110,8 @@
+ 		[ -n "$DYNAMIC_POOL" ] && ip route add "$DYNAMIC_POOL" dev "$TUN_DEVICE"
+ 		[ -n "$IPV6_PREFIX" ] && ip route add "$IPV6_PREFIX" dev "$TUN_DEVICE"
+ 		[ -n "$IPV4_TUN_ADDR" ] && ip addr add "$IPV4_TUN_ADDR" dev "$TUN_DEVICE"
+-		[ -n "$IPV6_TUN_ADDR" ] && ip addr add "$IPV6_TUN_ADDR" dev "$TUN_DEVICE"
++		[ -n "$IPV6_TUN_ADDR" ] && ip addr add "$IPV6_TUN_ADDR" dev "$TUN_DEVICE" preferred_lft 0
++		[ -n "$IPV6_LOCAL_ADDR" ] && ip addr add "$IPV6_LOCAL_ADDR" dev "$TUN_DEVICE"
+     fi
+     [ "$CONFIGURE_NAT44" = "yes" ] && [ -n "$DYNAMIC_POOL" ] && iptables -t nat -A POSTROUTING -s "$DYNAMIC_POOL" -j MASQUERADE || true
+ 
