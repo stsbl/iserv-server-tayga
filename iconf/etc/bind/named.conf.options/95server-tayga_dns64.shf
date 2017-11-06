@@ -2,7 +2,7 @@
 
 . /usr/lib/iserv/cfg
 
-if [ ! -z "$NAT64Range" ]
+if [ ! -z "$NAT64Range" ] && [ ! -z "$NAT64IPv4Range" ] && [ ! -z "$NAT64IPv6TunnelAddress" ] && [ ! -z "$NAT64IPv6LocalAddress" ]
 then
   Script="/options {/a \\"
   Script+="        dns64 $NAT64Range {\\\n"
