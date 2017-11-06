@@ -1,3 +1,11 @@
+stsbl-iserv-server-tayga (17.11.07-1) experimental; urgency=medium
+
+  * Blacklist F-Prot server for nat64
+  * Disable nat64 resolution in bind if required parameter are missing
+  * Added locales
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 00:25:58 +0100
+
 stsbl-iserv-server-tayga (17.11.03-3) experimental; urgency=medium
 
   * Fixed package structure
