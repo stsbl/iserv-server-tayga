@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (17.11.07-2) experimental; urgency=medium
+
+  * nat: Fixed missing whitelist rule for disabling http port
+    redirection for ipv4 range
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 02:20:34 +0100
+
 stsbl-iserv-server-tayga (17.11.07-1) experimental; urgency=medium
 
   * Blacklist F-Prot server for nat64
