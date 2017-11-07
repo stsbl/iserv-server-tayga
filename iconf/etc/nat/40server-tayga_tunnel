@@ -6,3 +6,6 @@ iptables -A forward -d $NAT64IPv4Range -m state --state RELATED,ESTABLISHED -j A
 iptables -A forward -i nat64 -j ACCEPT
 iptables -A forward -o nat64 -j ACCEPT
 
+# No transparent squid for nat64
+iptables -t nat -I forward -s $NAT64IPv4Range -j ACCEPT
+
