@@ -1,0 +1,14 @@
+domain (ip) {
+  table filter {
+    chain forward2 {
+$([ ! -z " $NAT64IPv4Range" ] && echo "       saddr $NAT64IPv4Range ACCEPT;")
+       interface nat64 ACCEPT;
+       outerface nat64 ACCEPT;
+    }
+  }
+  table nat {
+    chain forward2_first {
+$([ ! -z " $NAT64IPv4Range" ] && echo "       saddr $NAT64IPv4Range ACCEPT;")
+    }
+  }
+}
