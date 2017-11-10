@@ -10,6 +10,7 @@ Architecture: all
 Depends:
   ${misc:Depends},
   ${misc:Depends},
+  iserv-server-ferm,
   iserv-portal,
   sipcalc,
   stsbl-iserv-ipv6-support,
