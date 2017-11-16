@@ -12,8 +12,10 @@ Depends:
   ${misc:Depends},
   iserv-server-ferm,
   iserv-portal,
+  iserv-server-ferm,
   sipcalc,
   stsbl-iserv-ipv6-support,
+  stsbl-iserv-server-ferm-ipv6,
   tayga,
 Description: IServ Tayga Server
  Provides configuration for Tayga, a NAT64 tunnel server
