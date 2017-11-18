@@ -1,3 +1,11 @@
+stsbl-iserv-server-tayga (17.11.18-1) experimental; urgency=medium
+
+  * Disabled nat44 configuration as this is already done by firewall
+  * Moved ferm configuration for IPv6
+  * Fixed wrong location of IPv4 ferm config
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 18 Nov 2017 02:24:45 +0100
+
 stsbl-iserv-server-tayga (17.11.12-1) experimental; urgency=medium
 
   * Ported ipv6 rules to ferm
