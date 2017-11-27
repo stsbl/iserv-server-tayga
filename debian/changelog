@@ -1,3 +1,9 @@
+stsbl-iserv-server-tayga (17.11.27-1) experimental; urgency=medium
+
+  * Improved ferm configuration for new portal release
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Mon, 27 Nov 2017 23:25:53 +0100
+
 stsbl-iserv-server-tayga (17.11.18-1) experimental; urgency=medium
 
   * Disabled nat44 configuration as this is already done by firewall
