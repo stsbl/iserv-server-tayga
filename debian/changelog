@@ -1,3 +1,9 @@
+stsbl-iserv-server-tayga (17.12.02-1) experimental; urgency=medium
+
+  * Fixed wrong chain name in ipv4 firewall
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 02 Dec 2017 04:32:17 +0100
+
 stsbl-iserv-server-tayga (17.11.27-1) experimental; urgency=medium
 
   * Improved ferm configuration for new portal release
