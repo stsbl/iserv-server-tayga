@@ -7,7 +7,7 @@ $([ ! -z " $NAT64IPv4Range" ] && echo "       saddr $NAT64IPv4Range ACCEPT;")
     }
   }
   table nat {
-    chain forward_first {
+    chain forward2_first {
 $([ ! -z " $NAT64IPv4Range" ] && echo "       saddr $NAT64IPv4Range ACCEPT;")
     }
   }
