@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (17.12.08-1) experimental; urgency=medium
+
+  * Added license
+  * Permanently blacklisted Avast update server which does not work with nat64
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 08 Dec 2017 02:47:55 +0100
+
 stsbl-iserv-server-tayga (17.12.02-1) experimental; urgency=medium
 
   * Fixed wrong chain name in ipv4 firewall
