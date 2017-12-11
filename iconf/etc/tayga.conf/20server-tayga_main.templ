@@ -26,7 +26,7 @@ tun-device nat64
 #
 # Mandatory.
 #
-ipv4-addr $(echo $(sipcalc -S 32 $NAT64IPv4Range | grep -E "^Usable range" | awk '{ print $4 }'))
+ipv4-addr $(echo $(sipcalc -s 32 $NAT64IPv4Range | head -n 4 | tail -n 1 | awk '{ print $5 }'))
 
 #
 # TAYGA's IPv6 address.  This is NOT your router's IPv6 address!  TAYGA

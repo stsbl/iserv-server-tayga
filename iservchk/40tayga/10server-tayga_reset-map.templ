@@ -1,0 +1,12 @@
+# IP addresses from tayga dynamic range can exceed the possible number of
+# addresses after sometimes (dynamic Ipv6 addresses), there we check if 
+# reset of map is required
+Test "tayga dynamic map too big"
+   [ ! -f "/var/spool/tayga/dynamic.map" ] && exit 0
+   [ \$(tail -n +12 /var/spool/tayga/dynamic.map | wc -l) -ge \\
+     \$(sipcalc -s 32 "$NAT64IPv4Range" | tail -n +4 | wc -l) ] || exit 0
+   exit 1
+   ---
+   service tayga stop
+   echo > /var/spool/tayga/dynamic.map
+
