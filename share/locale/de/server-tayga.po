@@ -1,0 +1,47 @@
+msgid "IPv6 range for NAT64"
+msgstr "IPv6-Bereich für NAT64"
+
+msgid ""
+"IPv6 range which is used to map IPv4 addresses in DNS. Must at least have a "
+"prefix length of 96 bit. Normally there is no need to change that value."
+msgstr ""
+"IPv6-Bereich, der benutzt wird, um IPv4-Adressen im DNS abzubilden. Muss "
+"mindestens eine Präfixlänge von 96-bit besitzen. Normalerweise muss dieser "
+"Wert nicht geändert werden."
+
+msgid "IPv4 alias range for NAT64"
+msgstr "IPv4-Aliasbereich für NAT64"
+
+msgid ""
+"Every IPv6 host which should access IPv4 hosts must have an internal IPv4 "
+"address. A random one will chosen from this range. This range must be "
+"different from other IPv4 ranges in LAN."
+msgstr ""
+"Jedes IPv6-Gerät, welches auf IPv4-Geräte zugreifen soll muss eine interne "
+"IPv4-Adresse besitzen. Eine Zufällige wird aus diesem Bereich gewählt. "
+"Dieser Bereich muss sich von anderen IPv4-Bereichen im LAN unterscheiden."
+
+msgid "IPv6 tunnel address"
+msgstr "IPv6-Tunneladresse"
+
+msgid ""
+"The NAT64 tunnel requires a global IPv6 address to create outgoing packets. "
+"This address should have a 128 bit prefix."
+msgstr ""
+"Der NAT64-Tunnel benötigt eine globale IPv6-Adresse, um ausgehende Pakete "
+"zu erstellen. Diese Adresse sollte ein 128-bit Präfix haben."
+
+msgid "IPv6 local address"
+msgstr "Lokale IPv6-Adresse"
+
+msgid ""
+"The NAT64 tunnel requires a second global IPv6 address to create outgoing "
+"packets which have the origin on own host. This address should have a "
+"128 bit prefix."
+msgstr ""
+"Der NAT64-Tunnel benötigt eine zweite globale IPv6-Adresse, um ausgehende "
+"Pakete zu erstellen, die das eigene Gerät als Quelle haben. Diese Adresse "
+"sollte ein 128-bit Präfix haben."
+
+msgid "Module: Tayga server"
+msgstr "Modul: Tayga-Server"

@@ -1,3 +1,64 @@
+stsbl-iserv-server-tayga (17.12.08-2) experimental; urgency=medium
+
+  * Revert "Permanently blacklisted Avast update server which does not work with nat64"
+  * Moved firewall rules for ipv4 to forward_first
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 08 Dec 2017 03:14:07 +0100
+
+stsbl-iserv-server-tayga (17.12.08-1) experimental; urgency=medium
+
+  * Added license
+  * Permanently blacklisted Avast update server which does not work with nat64
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 08 Dec 2017 02:47:55 +0100
+
+stsbl-iserv-server-tayga (17.12.02-1) experimental; urgency=medium
+
+  * Fixed wrong chain name in ipv4 firewall
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 02 Dec 2017 04:32:17 +0100
+
+stsbl-iserv-server-tayga (17.11.27-1) experimental; urgency=medium
+
+  * Improved ferm configuration for new portal release
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Mon, 27 Nov 2017 23:25:53 +0100
+
+stsbl-iserv-server-tayga (17.11.18-1) experimental; urgency=medium
+
+  * Disabled nat44 configuration as this is already done by firewall
+  * Moved ferm configuration for IPv6
+  * Fixed wrong location of IPv4 ferm config
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 18 Nov 2017 02:24:45 +0100
+
+stsbl-iserv-server-tayga (17.11.12-1) experimental; urgency=medium
+
+  * Ported ipv6 rules to ferm
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sun, 12 Nov 2017 00:24:56 +0100
+
+stsbl-iserv-server-tayga (17.11.11-1) experimental; urgency=medium
+
+  * Ported firewall rules to ferm
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 11 Nov 2017 01:00:13 +0100
+
+stsbl-iserv-server-tayga (17.11.07-2) experimental; urgency=medium
+
+  * nat: Fixed missing whitelist rule for disabling http port
+    redirection for ipv4 range
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 02:20:34 +0100
+
+stsbl-iserv-server-tayga (17.11.07-1) experimental; urgency=medium
+
+  * Blacklist F-Prot server for nat64
+  * Disable nat64 resolution in bind if required parameter are missing
+  * Added locales
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 07 Nov 2017 00:25:58 +0100
+
 stsbl-iserv-server-tayga (17.11.03-3) experimental; urgency=medium
 
   * Fixed package structure
