@@ -1,6 +1,13 @@
+stsbl-iserv-server-tayga (17.12.19-1) experimental; urgency=medium
+
+  * Fixed sipcalc usage and added resetting of dynamic map
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 19 Dec 2017 08:37:49 +0100
+
 stsbl-iserv-server-tayga (17.12.08-2) experimental; urgency=medium
 
-  * Revert "Permanently blacklisted Avast update server which does not work with nat64"
+  * Revert "Permanently blacklisted Avast update server which does not work
+    with nat64"
   * Moved firewall rules for ipv4 to forward_first
 
  -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 08 Dec 2017 03:14:07 +0100
