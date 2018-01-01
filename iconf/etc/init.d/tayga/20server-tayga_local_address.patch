@@ -1,5 +1,5 @@
 --- /etc/init.d/tayga	2013-03-03 11:53:36.000000000 +0100
-+++ tayga	2017-11-03 03:20:27.585713110 +0100
++++ tayga	2018-11-03 03:20:27.585713110 +0100
 @@ -110,7 +110,8 @@
  		[ -n "$DYNAMIC_POOL" ] && ip route add "$DYNAMIC_POOL" dev "$TUN_DEVICE"
  		[ -n "$IPV6_PREFIX" ] && ip route add "$IPV6_PREFIX" dev "$TUN_DEVICE"
