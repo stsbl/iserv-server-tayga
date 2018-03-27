@@ -1,3 +1,12 @@
+stsbl-iserv-server-tayga (18.03.28-1) experimental; urgency=medium
+
+  * Updated copyright
+  * Added lintian overrides
+  * Hardened firewall rules using ipfilter and make use of functions
+  * Updated packaging
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Wed, 28 Mar 2018 00:09:55 +0200
+
 stsbl-iserv-server-tayga (17.12.19-1) experimental; urgency=medium
 
   * Fixed sipcalc usage and added resetting of dynamic map
