@@ -2,20 +2,20 @@ Source: stsbl-iserv-server-tayga
 Section: misc
 Priority: extra
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper (>= 10)
 Standards-Version: 3.9.8
 
 Package: stsbl-iserv-server-tayga
 Architecture: all
-Depends:
-  ${misc:Depends},
-  ${misc:Depends},
+Depends: ${misc:Depends},
+  ${perl:Depends},
   iserv-portal (>= 17.11.27-0),
   iserv-server-ferm,
   sipcalc,
   stsbl-iserv-ipv6-support,
   stsbl-iserv-server-ferm-ipv6,
   tayga,
+Xb-Private-IServ-Revision: ${iserv:Revision}
 Description: IServ Tayga Server
  Provides configuration for Tayga, a NAT64 tunnel server
 Tag: suite::iserv:portal
