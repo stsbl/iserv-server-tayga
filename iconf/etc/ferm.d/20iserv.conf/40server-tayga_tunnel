@@ -1,0 +1,22 @@
+@def $nat64ipv4range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv4Range"'`;
+
+@def &nat64() = {
+  @if ($nat64ipv4range) {
+   saddr @ipfilter($nat64ipv4range) ACCEPT;
+  }
+}
+
+domain (ip) {
+  table filter {
+    chain forward_first {
+      &nat64();
+      interface nat64 ACCEPT;
+      outerface nat64 ACCEPT;
+    }
+  }
+  table nat {
+    chain forward2_first {
+      &nat64();
+    }
+  }
+}

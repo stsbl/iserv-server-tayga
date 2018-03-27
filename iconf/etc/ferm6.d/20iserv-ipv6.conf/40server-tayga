@@ -1,0 +1,29 @@
+@def $nat64range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64Range"'`;
+@def $nat64ipv6tunneladdress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6TunnelAddress"'`;
+@def $nat64ipv6localaddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6LocalAddress"'`;
+
+@def &allow_nat64($table, $chain) = {
+  @if ($nat64ipv6tunneladdress) {
+    table $table chain $chain saddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
+    table $table chain $chain daddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
+  }
+  @if ($nat64ipv6localaddress) {
+    table $table chain $chain saddr @ipfilter($nat64ipv6localaddress) ACCEPT;
+    table $table chain $chain daddr @ipfilter($nat64ipv6localaddress) ACCEPT;
+  }
+}
+
+domain(ip6) {
+  table filter {
+    chain forward2 {
+      @if ($nat64range) {
+        saddr @ipfilter($nat64range) jump inet_in;
+        daddr @ipfilter($nat64range) jump inet_out;
+      }
+    }
+  }
+}
+
+&allow_nat64("filter", "forward2"); 
+&allow_nat64("nat", "prerouting_first");
+
