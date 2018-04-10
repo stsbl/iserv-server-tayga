@@ -38,7 +38,7 @@ domain (ip) {
 
 domain(ip6) {
   table filter {
-    chain forward2 {
+    chain FORWARD {
       @if ($nat64range) {
         saddr @ipfilter($nat64range) jump inet_in;
         daddr @ipfilter($nat64range) jump inet_out;
@@ -46,7 +46,7 @@ domain(ip6) {
     }
   }
 
-  &allow_nat64("filter", "forward2"); 
+  &allow_nat64("filter", "FORWARD"); 
   &allow_nat64("nat", "prerouting_first");
 }
 
