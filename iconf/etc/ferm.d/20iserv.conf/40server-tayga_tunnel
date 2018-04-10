@@ -45,8 +45,8 @@ domain(ip6) {
       }
     }
   }
-}
 
-&allow_nat64("filter", "forward2"); 
-&allow_nat64("nat", "prerouting_first");
+  &allow_nat64("filter", "forward2"); 
+  &allow_nat64("nat", "prerouting_first");
+}
 
