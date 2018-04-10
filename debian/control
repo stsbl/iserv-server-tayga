@@ -15,7 +15,7 @@ Depends: ${misc:Depends},
   iserv-portal (>= 17.11.27-0),
   iserv-server-ferm (>= 18.04.10),
   sipcalc,
-  stsbl-iserv-ipv6-support (>= 18.04.10),
+  stsbl-iserv-ipv6-support (>= 18.04.10-3),
   tayga,
 Xb-Private-IServ-Revision: ${iserv:Revision}
 Description: IServ Tayga Server
