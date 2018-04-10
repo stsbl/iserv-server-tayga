@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (18.04.10-1) experimental; urgency=medium
+
+  * Updated packaging
+  * Adapted package for native IServ IPv6 support
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Tue, 10 Apr 2018 18:19:06 +0200
+
 stsbl-iserv-server-tayga (18.03.28-2) experimental; urgency=medium
 
   * Fixed install
