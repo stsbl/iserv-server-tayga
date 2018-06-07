@@ -15,7 +15,7 @@ domain (ip) {
     }
   }
   table nat {
-    chain forward2_first {
+    chain prerouting_first {
       &nat64();
     }
   }
