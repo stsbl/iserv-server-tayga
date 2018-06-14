@@ -14,6 +14,7 @@ domain (ip) {
       outerface nat64 ACCEPT;
     }
   }
+
   table nat {
     chain prerouting_first {
       &nat64();
@@ -30,6 +31,7 @@ domain (ip) {
     table $table chain $chain saddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
     table $table chain $chain daddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
   }
+
   @if ($nat64ipv6localaddress) {
     table $table chain $chain saddr @ipfilter($nat64ipv6localaddress) ACCEPT;
     table $table chain $chain daddr @ipfilter($nat64ipv6localaddress) ACCEPT;
