@@ -1,0 +1,16 @@
+Test "reserve first IPv4 from dynamic range for host"
+  [ -z "$NAT64IPv4Range" ] || [ -z "$NAT64IPv6LocalAddress" ] ||
+  grep -qE "^$(sipcalc "$NAT64IPv4Range" | grep -E "^Usable range" |
+     awk -F- '{ print $2 };' | awk '{$1=$1};1')\s+$NAT64IPv6LocalAddress" \
+     /var/spool/tayga/dynamic.map
+  ---
+  set -e
+  service tayga stop
+  mkdir -p /var/spool/tayga
+  touch /var/spool/tayga/dynamic.map
+  MappedIPv4="$(sipcalc "$NAT64IPv4Range" | grep -E "^Usable range" |
+    awk -F- '{ print $2 };' | awk '{$1=$1};1')"
+  sed -i -E "/^${MappedIPv4}.+\$/d" /var/spool/tayga/dynamic.map
+  sed -i -E "/^.+\s+${NAT64IPv6LocalAddress}.+\$/d" /var/spool/tayga/dynamic.map
+  echo "$MappedIPv4     $NAT64IPv6LocalAddress      1546718544" >> /var/spool/tayga/dynamic.map
+
