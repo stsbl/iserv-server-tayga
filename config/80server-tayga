@@ -8,9 +8,9 @@ group           Module: Tayga server
 
 NAT64IPv4Range:
 name            IPv4 alias range for NAT64
-description     Every IPv6 host which should access IPv4 hosts must have an internal IPv4 address. A random one will chosen from this range. This range must be different from other IPv4 ranges in LAN.
+description     An IPv4 address is required to send the NAT64 requests to the internet. A random one will be chosen from this range. This range must be different from other IPv4 ranges in LAN.
 type            string
-default         10.1.0.0/16
+default         172.16.64.0/30
 readonly        true
 group           Module: Tayga server
 

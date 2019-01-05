@@ -1,0 +1,15 @@
+# Upgrade to new (smaller) NAT64 IPv4 range once
+Test "upgrade to new IPv4 range"
+  grep -q ^10server-tayga_ip-range_upgrade$ /var/lib/iserv/config/update.log
+  ---
+  set -e
+  # Nothing to do if new default value is already set
+  if [ "$NAT64IPv4Range" = "172.16.64.0/30" ]
+  then
+    echo 10server-tayga_ip-range_upgrade >> /var/lib/iserv/config/update.log
+  fi
+  store_cfg /etc/iserv/config NAT64IPv4Range 172.16.64.0/30
+  # iservchk can fail due to iservchk errors!
+  iservchk -a config bind ferm || true
+  echo 10server-tayga_ip-range_upgrade >> /var/lib/iserv/config/update.log
+
