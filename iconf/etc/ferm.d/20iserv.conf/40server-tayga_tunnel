@@ -1,8 +1,8 @@
-@def $nat64ipv4range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv4Range"'`;
+@def $NAT64IPv4Range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv4Range"'`;
 
 @def &nat64() = {
-  @if ($nat64ipv4range) {
-   saddr @ipfilter($nat64ipv4range) ACCEPT;
+  @if ($NAT64IPv4Range) {
+   saddr @ipfilter($NAT64IPv4Range) ACCEPT;
   }
 }
 
@@ -22,33 +22,41 @@ domain (ip) {
   }
 }
 
-@def $nat64range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64Range"'`;
-@def $nat64ipv6tunneladdress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6TunnelAddress"'`;
-@def $nat64ipv6localaddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6LocalAddress"'`;
+@def $NAT64Range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64Range"'`;
+@def $NAT64Ipv6TunnelAddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6TunnelAddress"'`;
+@def $NAT64Ipv6LocalAddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6LocalAddress"'`;
 
 @def &allow_nat64($table, $chain) = {
-  @if ($nat64ipv6tunneladdress) {
-    table $table chain $chain saddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
-    table $table chain $chain daddr @ipfilter($nat64ipv6tunneladdress) ACCEPT;
+  @if ($NAT64Ipv6TunnelAddress) {
+    table $table chain $chain saddr @ipfilter($NAT64Ipv6TunnelAddress) ACCEPT;
+    table $table chain $chain daddr @ipfilter($NAT64Ipv6TunnelAddress) ACCEPT;
   }
 
-  @if ($nat64ipv6localaddress) {
-    table $table chain $chain saddr @ipfilter($nat64ipv6localaddress) ACCEPT;
-    table $table chain $chain daddr @ipfilter($nat64ipv6localaddress) ACCEPT;
+  @if ($NAT64Ipv6LocalAddress) {
+    table $table chain $chain saddr @ipfilter($NAT64Ipv6LocalAddress) ACCEPT;
+    table $table chain $chain daddr @ipfilter($NAT64Ipv6LocalAddress) ACCEPT;
   }
 }
 
 domain(ip6) {
   table filter {
     chain FORWARD {
-      @if ($nat64range) {
-        saddr @ipfilter($nat64range) jump inet_in;
-        daddr @ipfilter($nat64range) jump inet_out;
+      @if ($NAT64Range) {
+        saddr @ipfilter($NAT64Range) jump inet_in;
+        daddr @ipfilter($NAT64Range) jump inet_out;
       }
     }
   }
 
   &allow_nat64("filter", "FORWARD"); 
   &allow_nat64("nat", "prerouting_first");
+
+  table nat {
+    chain POSTROUTING {
+      # SNAT before sending data to NAT64 bridge to prevent exhausting of NAT64
+      # range (all data is sent with the host IP to Tayga).
+      outerface nat64 jump MASQUERADE;
+    }
+  }
 }
 
