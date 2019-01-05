@@ -8,5 +8,13 @@ Test "tayga dynamic map too big"
    exit 1
    ---
    service tayga stop
-   echo > /var/spool/tayga/dynamic.map
+   rm -f /var/spool/tayga/dynamic.map
+
+Test "reset tayga dynamic map once"
+  grep -q ^10server-tayga_reset-map_upgrade$ /var/lib/iserv/config/update.log
+  ---
+  set -e
+  service tayga stop
+  rm -f /var/spool/tayga/dynamic.map
+  echo 10server-tayga_reset-map_upgrade >> /var/lib/iserv/config/update.log
 
