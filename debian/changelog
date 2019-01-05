@@ -1,7 +1,14 @@
+stsbl-iserv-server-tayga (19.01.05-2) experimental; urgency=medium
+
+  * iservchk: Fixed order
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sat, 05 Jan 2019 21:52:28 +0100
+
 stsbl-iserv-server-tayga (19.01.05-1) experimental; urgency=medium
 
   * Updated build rules for webpack support
-  * ferm: Added IPv6 masquerading to reduce amount of required mapped IPv4 addresses to one
+  * ferm: Added IPv6 masquerading to reduce amount of required mapped IPv4
+    addresses to one
   * iservchk: Added process name to {Start,Stop}
   * iservchk: Added one time reset for tayga dynamic map for upgrade
   * Changed default IPv4 range to a smaller one and upgrade once
