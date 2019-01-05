@@ -4,7 +4,7 @@
 
 if [ -z "$NAT64Range" ] || [ -z "$NAT64IPv4Range" ] || [ -z "$NAT64IPv6TunnelAddress" ] || [ -z "$NAT64IPv6LocalAddress" ]
 then
-  echo "Stop tayga"
+  echo "Stop tayga tayga"
   echo
 else
   echo "Check /etc/init.d/tayga"
@@ -13,6 +13,6 @@ else
   echo "Check /etc/default/tayga"
   echo "Check /etc/tayga.conf"
   echo
-  echo "Start tayga"
+  echo "Start tayga tayga"
   echo
 fi
