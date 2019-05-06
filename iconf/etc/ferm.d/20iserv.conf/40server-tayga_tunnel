@@ -40,10 +40,21 @@ domain (ip) {
 
 domain(ip6) {
   table filter {
+    chain nat64_in {
+      # do not accept invalid packets from NAT64
+      mod conntrack ctstate INVALID DROP;
+      jump inet_in;
+    }
+    chain nat64_out {
+      # do not accept invalid packets from NAT64
+      mod conntrack ctstate INVALID DROP;
+      jump inet_out;
+
+    }
     chain FORWARD {
       @if ($NAT64Range) {
-        saddr @ipfilter($NAT64Range) jump inet_in;
-        daddr @ipfilter($NAT64Range) jump inet_out;
+        saddr @ipfilter($NAT64Range) jump nat64_in;
+        daddr @ipfilter($NAT64Range) jump nat64_out;
       }
     }
   }
