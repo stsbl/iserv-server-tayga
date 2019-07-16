@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (19.07.16-1) experimental; urgency=medium
+
+  * squid: Explicitly allow access to NAT64 mapped range as it is maybe
+    located inside of configured LAN range
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Tue, 16 Jul 2019 23:26:30 +0200
+
 stsbl-iserv-server-tayga (19.05.09-1) experimental; urgency=medium
 
   * Updated source format
