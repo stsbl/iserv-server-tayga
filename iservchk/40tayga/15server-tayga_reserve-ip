@@ -12,5 +12,5 @@ Test "reserve first IPv4 from dynamic range for host"
     awk -F- '{ print $2 };' | awk '{$1=$1};1')"
   sed -i -E "/^${MappedIPv4}.+\$/d" /var/spool/tayga/dynamic.map
   sed -i -E "/^.+\s+${NAT64IPv6LocalAddress}.+\$/d" /var/spool/tayga/dynamic.map
-  echo "$MappedIPv4     $NAT64IPv6LocalAddress      1546718544" >> /var/spool/tayga/dynamic.map
+  echo -e "$MappedIPv4\t$NAT64IPv6LocalAddress\t$(date +%s)" >> /var/spool/tayga/dynamic.map
 
