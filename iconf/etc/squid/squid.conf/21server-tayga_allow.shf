@@ -1,0 +1,12 @@
+#!/bin/bash
+
+. /usr/lib/iserv/cfg
+
+sed -E '/^# Deny access to the remaining LAN/i \
+# Allow access to NAT64 range before denining access to LAN as it is may\
+# located inside of $LAN. As we are only dealing with IPv6 traffic here\
+# it is not neccessary to account activation here as blocked IPv6 traffic\
+# never reaches this Squid instance.\
+  acl to_nat64 dst '"$NAT64Range"'\
+  http_access allow to_nat64\
+'
