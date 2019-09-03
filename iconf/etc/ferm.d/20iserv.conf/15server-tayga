@@ -1,0 +1,30 @@
+@def $NAT64Range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64Range"'`;
+
+domain (ip6) {
+  table filter {
+    chain activation_out {
+      @if $activation {
+         # Allow packets to the NAT64 range from clients which have been granted
+         # internet access.
+         daddr @ipfilter($NAT64Range) mod set set iserv-ipv6-support-forward src ACCEPT;
+      }
+    }
+    # Explicitly allow access to NAT64 as it is maybe located inside of $LAN
+    chain inet_out {
+      @if $activation {
+        daddr @ipfilter($NAT64Range) jump activation_out;
+      } @else {
+        daddr @ipfilter($NAT64Range) ACCEPT;
+      }
+    }
+    chain inet_in {
+      saddr @ipfilter($NAT64Range) jump nat64_inet_in;
+    }
+    # Explicitly accept answers from NAT64 as it is maybe located inside of $LAN
+    chain nat64_inet_in {
+      mod state state (INVALID NEW) REJECT reject-with icmp6-adm-prohibited;
+      ACCEPT;
+    }
+  }
+}
+

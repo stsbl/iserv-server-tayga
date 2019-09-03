@@ -22,7 +22,6 @@ domain (ip) {
   }
 }
 
-@def $NAT64Range = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64Range"'`;
 @def $NAT64Ipv6TunnelAddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6TunnelAddress"'`;
 @def $NAT64Ipv6LocalAddress = `bash -c '. /usr/lib/iserv/cfg; echo "$NAT64IPv6LocalAddress"'`;
 
