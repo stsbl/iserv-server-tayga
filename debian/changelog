@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (19.09.03-1) experimental; urgency=medium
+
+  * squid: Disable access rule if no local network is available
+  * ferm: Fixed access to NAT64 if it is located inside of $LAN
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Tue, 03 Sep 2019 04:29:31 +0200
+
 stsbl-iserv-server-tayga (19.07.17-1) experimental; urgency=medium
 
   * Fixed editing of tayga dynamic map
