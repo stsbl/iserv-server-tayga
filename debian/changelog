@@ -1,3 +1,9 @@
+stsbl-iserv-server-tayga (19.10.23-2) stable; urgency=medium
+
+  * Ferm: Fixed missing ipfilter
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 23 Oct 2019 06:21:59 +0200
+
 stsbl-iserv-server-tayga (19.10.23-1) stable; urgency=medium
 
   * Bumped copyright
