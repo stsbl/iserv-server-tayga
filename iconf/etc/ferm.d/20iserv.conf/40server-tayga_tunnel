@@ -8,10 +8,12 @@
 
 domain (ip) {
   table filter {
-    chain forward_first {
+    chain forward_white {
+      @if ($NAT64IPv4Range) {
+        saddr @ipfilter($NAT64IPv4Range) daddr ($LAN) proto tcp REJECT reject-with tcp-reset;
+        saddr @ipfilter($NAT64IPv4Range) daddr ($LAN) REJECT;
+      }
       &nat64();
-      interface nat64 ACCEPT;
-      outerface nat64 ACCEPT;
     }
   }
 

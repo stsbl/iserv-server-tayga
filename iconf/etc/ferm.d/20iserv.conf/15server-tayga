@@ -22,7 +22,8 @@ domain (ip6) {
     }
     # Explicitly accept answers from NAT64 as it is maybe located inside of $LAN
     chain nat64_inet_in {
-      mod state state (INVALID NEW) REJECT reject-with icmp6-adm-prohibited;
+      mod state state (INVALID NEW) proto tcp REJECT reject-with tcp-reset;
+      mod state state (INVALID NEW) REJECT;
       ACCEPT;
     }
   }
