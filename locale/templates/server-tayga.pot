@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 01:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config/80server-tayga
+msgid ""
+"An IPv4 address is required to send the NAT64 requests to the internet. A "
+"random one will be chosen from this range. This range must be different from "
+"other IPv4 ranges in LAN."
+msgstr ""
+
+#: config/80server-tayga
+msgid "IPv4 alias range for NAT64"
+msgstr ""
+
+#: config/80server-tayga
+msgid "IPv6 local address"
+msgstr ""
+
+#: config/80server-tayga
+msgid "IPv6 range for NAT64"
+msgstr ""
+
+#: config/80server-tayga
+msgid ""
+"IPv6 range which is used to map IPv4 addresses in DNS. Must at least have a "
+"prefix length of 96 bit. Normally there is no need to change that value."
+msgstr ""
+
+#: config/80server-tayga
+msgid "IPv6 tunnel address"
+msgstr ""
+
+#: config/80server-tayga
+msgid "Module: Tayga server"
+msgstr ""
+
+#: config/80server-tayga
+msgid ""
+"The NAT64 tunnel requires a global IPv6 address to create outgoing packets. "
+"This address should have a 128 bit prefix."
+msgstr ""
+
+#: config/80server-tayga
+msgid ""
+"The NAT64 tunnel requires a second global IPv6 address to create outgoing "
+"packets which have the origin on own host. This address should have a 128 "
+"bit prefix."
+msgstr ""
