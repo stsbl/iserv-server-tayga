@@ -1,3 +1,10 @@
+stsbl-iserv-server-tayga (20.08.02-1) testing; urgency=medium
+
+  * Bumped copyright
+  * Updated locale handling to use genpo
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 02 Aug 2020 06:49:39 +0200
+
 stsbl-iserv-server-tayga (19.10.23-2) stable; urgency=medium
 
   * Ferm: Fixed missing ipfilter
